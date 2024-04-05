@@ -1,2 +1,19 @@
 # Fullstack-2024s
 Project from the module Fullstack Web Anwendungen in Summersemester 2023 - HS Worms
+
+**Authors**
+- [Adrian Lösch](https://github.com/ultraluminar)
+- [Lukas Klassen](https://github.com/KlasL4243)
+- [Konstantin Bohn](https://github.com/kozubi00)
+
+## Spezifikationen
+|Datenbank|Service|
+|---|---|
+|No-SQL|MongoDB|
+|Relational Database|PostGRE DB|
+
+### Monolithisches System
+
+## Weitere Vorgaben
+- **Backend**: Node.js
+- **Frontend**: Angular
