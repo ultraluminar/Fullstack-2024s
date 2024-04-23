@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/ultraluminar/Fullstack-2024s/issues"
   },
-  "homepage": "https://github.com/ultraluminar/Fullstack-2024s#readme"
+  "homepage": "https://github.com/ultraluminar/Fullstack-2024s#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
