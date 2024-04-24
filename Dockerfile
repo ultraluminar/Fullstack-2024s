@@ -1,17 +1,11 @@
-FROM node:21.7.3-slim
+FROM node:slim
 
-# Create app directory
 WORKDIR /app
 
-# Install app dependencies
 COPY package*.json ./
-
 RUN npm install
 
 COPY . .
 
-ENV PORT=8080
-
-EXPOSE 8080
-
-CMD ["npm", "start"]
+EXPOSE 3000
+CMD ["npm", "run", "dev"]

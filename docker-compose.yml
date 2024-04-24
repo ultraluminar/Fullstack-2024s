@@ -1,32 +1,13 @@
 services:
-  server:
-    image: server
-    container_name: server
-    ports:
-      - "8080:8080"
-    networks:
-      - dockertest
-    depends_on:
-      - postgres
-  postgres:
+  db-service:
     image: postgres
-    container_name: postgres
-    restart: always
-    ports:
-      - "5432:5432"
-    networks:
-      - dockertest
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: mariadb
-      POSTGRES_DB: customerdb
-    volumes:
-      - postgres-data:/data/db
-
-networks:
-  dockertest:
-    driver: bridge
-
-volumes:
-  postgres-data:
-    driver: local
+      POSTGRES_USER: 'db-user'
+      POSTGRES_PASSWORD: 'db-password'
+      POSTGRES_DB: 'db-database'
+  server-service:
+    image: server-image
+    depends_on:
+      - db-service
+    ports:
+      - 8080:3000

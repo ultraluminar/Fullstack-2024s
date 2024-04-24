@@ -1,32 +1,17 @@
 {
-  "name": "fullstack-2024s",
-  "version": "0.1.0",
-  "description": "Fullstack project from Module FWA 2024s",
-  "main": "customer.js",
+  "name": "docker-test",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node customer.js"
+    "dev": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ultraluminar/Fullstack-2024s.git"
-  },
-  "keywords": [
-    "fullstack",
-    "fwa",
-    "hs-worms",
-    "angular"
-  ],
-  "author": "Adrian Lösch",
+  "author": "Lukas Klassen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ultraluminar/Fullstack-2024s/issues"
-  },
-  "homepage": "https://github.com/ultraluminar/Fullstack-2024s#readme",
   "dependencies": {
     "express": "^4.19.2",
-    "pg": "^8.11.5",
-    "sequelize": "^6.37.3"
-  },
-  "type": "module"
+    "pg": "^8.11.5"
+  }
 }
