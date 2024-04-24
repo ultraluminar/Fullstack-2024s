@@ -1,11 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-const seq = new Sequelize('customerdb', 'root', 'mariadb', {
-    host: 'localhost', 
-    dialect: 'postgres',
-    //dialectOptions: {connnectTimeout: 10000},
-    //pool: {max: 5, min: 0, acquire: 30000, idle: 10000}
-});
+const seq = new Sequelize('postgres://root:mariadb@postpres:5432/customerdb');
 
 try {
     await seq.authenticate();
@@ -13,3 +8,4 @@ try {
 } catch (error){
     console.error('Unable to connect to database: ', error);
 }
+
