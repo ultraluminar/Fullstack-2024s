@@ -2,7 +2,7 @@
   "name": "fullstack-2024s",
   "version": "0.1.0",
   "description": "Fullstack project from Module FWA 2024s",
-  "main": "index.js",
+  "main": "customer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
