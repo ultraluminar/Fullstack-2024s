@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/ultraluminar/Fullstack-2024s#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "postgres": "^3.4.4",
+    "sequelize": "^6.37.3"
   }
 }
