@@ -4,7 +4,8 @@
   "description": "Fullstack project from Module FWA 2024s",
   "main": "customer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node customer.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,6 @@
     "express": "^4.19.2",
     "postgres": "^3.4.4",
     "sequelize": "^6.37.3"
-  }
+  },
+  "type": "module"
 }
