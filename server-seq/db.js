@@ -11,5 +11,9 @@ const pool = new Pool({
 
 export { pool }
 
-import Sequelize from "sequelize";
+import { Sequelize } from "sequelize";
 
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+    dialect: 'postgres',
+    host: process.env.DB_HOST
+});
