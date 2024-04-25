@@ -1,12 +1,13 @@
 import express, { request, response } from 'express';
-import { pool } from './db.js';
+//import { pool } from './db.js';
 
-const port = 3000;
+import { sequelize } from './db.js';
+import './userModel.js';
 
 const app = express();
 app.use(express.json());
 
-
+/*
 app.get('/', async (request, response) => {
     try {
         const data = await pool.query('SELECT * FROM dbtable');
@@ -39,7 +40,7 @@ app.get('/setup', async (request, response) => {
         response.sendStatus(500);
     }
 });
-
-app.listen(port, () => {
-    console.log(`Server listening on port: ${port}.`)
+*/
+app.listen(process.env.SERVER_PORT_INTERN, () => {
+    console.log(`Server listening on port: ${process.env.SERVER_PORT_INTERN}.`)
 });
