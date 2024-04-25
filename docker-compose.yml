@@ -9,7 +9,7 @@ services:
 
   server-service:
     build:
-      context: server/
+      context: server-seq/
     depends_on:
       - db-service
     env_file:
