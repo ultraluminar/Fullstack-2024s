@@ -7,7 +7,6 @@ services:
       POSTGRES_DB: 'db-database'
   server-service:
     build:
-      dockerfile: Dockerfile
       context: /server/
     depends_on:
       - db-service
