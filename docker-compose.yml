@@ -6,7 +6,9 @@ services:
       POSTGRES_PASSWORD: 'db-password'
       POSTGRES_DB: 'db-database'
   server-service:
-    image: server-image
+    build:
+      dockerfile: Dockerfile
+      context: /server/
     depends_on:
       - db-service
     ports:
