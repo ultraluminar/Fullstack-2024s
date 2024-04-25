@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from './db.js';
+import { sequelize } from '../db.js';
 
-sequelize.define(
+const User = sequelize.define(
     'User', 
     {
         id: {
@@ -24,9 +24,13 @@ sequelize.define(
     }
 );
 
+
 try {
     await sequelize.sync();
     console.log('Successfully synced models with database.');
 } catch (error) {
     console.error('Unable to sync models: ', error);
 }
+
+
+export { User }
