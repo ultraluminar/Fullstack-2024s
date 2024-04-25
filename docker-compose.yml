@@ -6,13 +6,18 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_DATABASE}
+    healthcheck:
+      test: 'pg_isready -U ${DB_USER} -d ${DB_DATABASE}'
+      interval: 3s
+      retries: 20 
 
   server-service:
     build:
       context: server-seq/
     depends_on:
-      - db-service
+      db-service:
+        condition: service_healthy
     env_file:
       - .env
     ports:
-      - ${SERVER_PORT}:${SERVER_PORT_INTERN}
+      - ${SERVER_PORT}:${SERVER_PORT_INTERN}  
