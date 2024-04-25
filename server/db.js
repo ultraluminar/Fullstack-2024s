@@ -4,9 +4,9 @@ const { Pool } = pg;
 const pool = new Pool({
     host: 'db-service',
     port: 5432,
-    user: 'db-user',
-    password: 'db-password',
-    database: 'db-database'
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
 
 export { pool }

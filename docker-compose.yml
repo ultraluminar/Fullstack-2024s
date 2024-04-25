@@ -1,14 +1,18 @@
 services:
+
   db-service:
     image: postgres
     environment:
-      POSTGRES_USER: 'db-user'
-      POSTGRES_PASSWORD: 'db-password'
-      POSTGRES_DB: 'db-database'
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+
   server-service:
     build:
-      context: /server/
+      context: server/
     depends_on:
       - db-service
+    env_file:
+      - .env
     ports:
-      - 8080:3000
+      - ${SERVER_PORT}:${SERVER_PORT_INTERN}
