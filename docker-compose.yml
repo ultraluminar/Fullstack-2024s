@@ -1,7 +1,7 @@
 services:
 
   db-service:
-    image: postgres
+    image: postgres:16.2-bookworm
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
