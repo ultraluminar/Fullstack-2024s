@@ -2,21 +2,19 @@ services:
 
   db-service:
     image: postgres:16.2-bookworm
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_DATABASE}
+    env_file:
+      - .env
     healthcheck:
-      test: pg_isready -U ${DB_USER} -d ${DB_DATABASE}
-      interval: ${DB_HEALTHCHECK_INTERVAL}
+      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+      interval: ${POSTGRES_HEALTHCHECK_INTERVAL}
 
   server-service:
     build:
       context: server-seq/
+    env_file:
+      - .env
     depends_on:
       db-service:
         condition: service_healthy
-    env_file:
-      - .env
     ports:
-      - ${SERVER_PORT}:${SERVER_PORT_INTERN}  
+      - ${SERVER_PORT}:${SERVER_PORT_INTERN}
