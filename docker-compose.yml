@@ -5,7 +5,8 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+      test: pg_isready -U ${POSTGRES_USER}
+      timeout: ${POSTGRES_TIMEOUT}
       interval: ${POSTGRES_HEALTHCHECK_INTERVAL}
 
   server-service:
