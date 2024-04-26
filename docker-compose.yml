@@ -10,7 +10,7 @@ services:
 
   server-service:
     build:
-      context: server-seq/
+      context: server/sequelize/
     env_file:
       - .env
     depends_on:
