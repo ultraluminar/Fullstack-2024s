@@ -1,6 +1,16 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from '../db.js';
+import { Sequelize, DataTypes } from 'sequelize';
 
+const sequelize = new Sequelize(
+    process.env.POSTGRES_DB, 
+    process.env.POSTGRES_USER, 
+    process.env.POSTGRES_PASSWORD, 
+    {
+        dialect: 'postgres',
+        host: process.env.POSTGRES_HOST
+    }
+);
+
+// MODEL
 const User = sequelize.define(
     'User', 
     {

@@ -1,7 +1,8 @@
 import express, { request, response } from 'express';
 import bodyParser from 'body-parser';
 
-import { getAllUsers, getCustomerByID, addCustomer } from './controllers/user.js';
+// TODO: fix broken String
+import { getAllUsers, getCustomerByID, addCustomer } from `.orms/${process.env.SERVER_CURRENT_ORM}/controllers/userController.js`;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));

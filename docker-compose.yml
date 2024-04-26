@@ -5,13 +5,13 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: pg_isready -U ${POSTGRES_USER}
+      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
       timeout: ${POSTGRES_TIMEOUT}
       interval: ${POSTGRES_HEALTHCHECK_INTERVAL}
 
   server-service:
     build:
-      context: server/sequelize/
+      context: server/
     env_file:
       - .env
     depends_on:
