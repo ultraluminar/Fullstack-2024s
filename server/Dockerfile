@@ -7,5 +7,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+#TODO: move EXPOSE into docker-compose ?
+EXPOSE 3000 
 CMD npm run dev
