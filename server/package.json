@@ -12,7 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "kysely": "^0.27.3",
+    "mikro-orm": "^6.2.3",
     "pg": "^8.11.5",
-    "sequelize": "^6.37.3"
+    "prisma": "^5.13.0",
+    "sequelize": "^6.37.3",
+    "typeorm": "^0.3.20"
   }
 }
