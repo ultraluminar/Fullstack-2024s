@@ -1,5 +1,5 @@
 import express, { request, response } from 'express';
-import { pool } from './db.js';
+import { pool } from './userModel.js';
 
 const port = 3000;
 
