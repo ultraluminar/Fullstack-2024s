@@ -1,9 +1,8 @@
-// TODO: manually choose orm here
-import { getAll, get, add, remove, update } from "../orms/sequelize/models/userModel.js";
+const userModel = await import(`../orms/${process.env.SERVER_CURRENT_ORM}/models/userModel.js`);
 
 async function getAllUsers(request, response){
     try {
-        const users = await getAll();
+        const users = await userModel.getAll();
         response.status(200).json({ users: users });
     } catch (error){
         console.log('Unable to get all Users\n', error);
@@ -14,7 +13,7 @@ async function getAllUsers(request, response){
 async function getUser(request, response){
     try {
         const id = request.params.id;
-        const user = await get(id);
+        const user = await userModel.get(id);
         if (user){
             response.status(200).json({ user: user });
         } else {
@@ -29,7 +28,7 @@ async function getUser(request, response){
 async function addUser(request, response){
     try {
         const user_json = requestToUserJson(request);
-        const user = await add(user_json);
+        const user = await userModel.add(user_json);
         response.status(201).json({ success: `User where firstName=${user_json.firstName} added successfully` });
     } catch (error){
         console.log('Unable to add User\n', error);
@@ -41,9 +40,9 @@ async function updateUser(request, response){
     try {
         const id = request.params.id;
         const user_json = requestToUserJson(request);
-        const user = await get(id);
+        const user = await userModel.get(id);
         if (user){
-            await update(user_json, id);
+            await userModel.update(user_json, id);
             response.status(200).json({ success: `User where id=${id} updated successfully` });
         } else {
             response.status(404).json({ error: `User where id=${id} not Found` });
@@ -57,9 +56,9 @@ async function updateUser(request, response){
 async function deleteUser(request, response){
     try {
         const id = request.params.id;
-        const user = await get(id);
+        const user = await userModel.get(id);
         if (user){
-            await remove(id)
+            await userModel.remove(id)
             response.status(200).json({ success: `User where id=${id} deleted successfully` });
         } else {
             response.status(404).json({ error: `User where id=${id} not Found` });
