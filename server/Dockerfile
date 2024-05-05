@@ -9,4 +9,4 @@ COPY . .
 
 #TODO: move EXPOSE into docker-compose ?
 EXPOSE 3000 
-CMD npm run dev
+CMD npm start
