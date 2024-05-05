@@ -11,6 +11,7 @@
   "author": "Lukas Klassen",
   "license": "ISC",
   "dependencies": {
+    "drizzle-orm": "^0.30.10",
     "express": "^4.19.2",
     "knex": "^3.1.0",
     "kysely": "^0.27.3",
@@ -18,6 +19,7 @@
     "pg": "^8.11.5",
     "prisma": "^5.13.0",
     "sequelize": "^6.37.3",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "typescript": "^5.4.5"
   }
 }
