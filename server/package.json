@@ -5,21 +5,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node restServer.js"
+    "prestart": "node src/orms/drizzle/migrations/migrate.js",
+    "start": "node src/restServer.js"
   },
   "author": "Lukas Klassen",
   "license": "ISC",
   "dependencies": {
+    "drizzle-kit": "^0.20.17",
     "drizzle-orm": "^0.30.10",
     "express": "^4.19.2",
     "knex": "^3.1.0",
     "kysely": "^0.27.3",
     "mikro-orm": "^6.2.3",
+    "npm": "^10.7.0",
     "pg": "^8.11.5",
     "prisma": "^5.13.0",
     "sequelize": "^6.37.3",
     "typeorm": "^0.3.20",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.8",
+    "@types/pg": "^8.11.6"
   }
 }
