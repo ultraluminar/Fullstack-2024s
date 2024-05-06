@@ -8,9 +8,9 @@ async function getAll() {
     return await db.select().from(users);
 }
 
-async function get(id: typeof users.$inferSelect.id): Promise<UserType> {
-    return db.query.users.findFirst({ where: eq(users.id, id) });
-    //return db.select().from(users).where(eq(User.id, id))
+async function get(id: typeof users.$inferSelect.id) {
+    //return db.query.users.findFirst({ where: eq(users.id, id) });
+    return db.select().from(users).where(eq(users.id, id))
 }
 
 async function add(user_json: NewUserType){
