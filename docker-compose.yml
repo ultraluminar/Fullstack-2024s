@@ -4,6 +4,7 @@ services:
     image: postgres:16.2-bookworm
     env_file:
       - .env
+    command: postgres -c log_statement=all
     healthcheck:
       test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
       timeout: ${POSTGRES_TIMEOUT}
