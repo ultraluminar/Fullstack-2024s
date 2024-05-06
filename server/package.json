@@ -5,10 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/restServer.js",
-    "transpile": "tsc",
-    "dev": "tsc && node src/restServer.js"
+    "prestart": "node src/orms/drizzle/migrations/migrate.js",
+    "start": "node src/restServer.js"
   },
   "author": "Lukas Klassen",
   "license": "ISC",

@@ -7,7 +7,7 @@ RUN npm ci
 
 COPY . .
 
-RUN npm run transpile
+RUN npm exec tsc
 
 #TODO: move EXPOSE into docker-compose ?
 EXPOSE 3000 
