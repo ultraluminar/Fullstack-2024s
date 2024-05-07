@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "camelcase": ["error", { "properties": "never" }],
+        "semi": ["error", "always"]
+    }
+}
