@@ -11,6 +11,10 @@ export const accounts = pgTable(
     }
 );
 
+export type Account = typeof accounts.$inferSelect;
+export type NewAccount = typeof accounts.$inferInsert;
+
+
 export const stocks = pgTable(
     "stocks",
     {
@@ -20,6 +24,10 @@ export const stocks = pgTable(
         price: numeric('price', { precision: 8, scale: 2 }).notNull()
     }
 );
+
+export type Stock = typeof stocks.$inferSelect;
+export type NewStock = typeof stocks.$inferInsert;
+
 
 export const orderTypeEnum = pgEnum("order_type", ["buy", "sell"]);
 export const orderStatusEnum = pgEnum("order_status", ["open", "closed"]);
@@ -36,3 +44,6 @@ export const orders = pgTable(
         stockId: integer('stockId').references(() => stocks.id),
     }
 );
+
+export type Order = typeof orders.$inferSelect;
+export type NewOrder = typeof orders.$inferInsert;
