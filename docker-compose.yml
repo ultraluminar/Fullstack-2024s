@@ -1,0 +1,21 @@
+services:
+  database:
+    image: postgres:16.2-bookworm
+    env_file:
+      - .env
+    command: postgres -c log_statement=all
+    healthcheck:
+      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+      interval: ${DB_HEALTH_CHECK_INTERVAL}
+      timeout: ${DB_HEALTH_CHECK_TIMEOUT}
+  
+  backend:
+    build: 
+      context: backend/
+    env_file:
+      - .env
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT_INTERNAL}
