@@ -2,9 +2,11 @@
   "name": "fullstack-2024s",
   "version": "0.1.0",
   "description": "Fullstack project from Module FWA 2024s",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "TODO: Implement prestart script",
+    "start": "TODO: Implement start script"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,13 @@
   },
   "homepage": "https://github.com/ultraluminar/Fullstack-2024s#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "drizzle-orm": "^0.30.10",
+    "express": "^4.19.2",
+    "pg": "^8.11.5",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.6",
+    "drizzle-kit": "^0.20.18"
   }
 }
