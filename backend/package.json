@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "prestart": "TODO: Implement prestart script",
-    "start": "TODO: Implement start script"
+    "prestart": "node ./db/migrate.js",
+    "start": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
+    "@types/express": "^4.17.21",
     "@types/pg": "^8.11.6",
     "drizzle-kit": "^0.20.18",
     "eslint": "^8.57.0",
