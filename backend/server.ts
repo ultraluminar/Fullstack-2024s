@@ -8,9 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/', (request, response) => {
-    response.status(200).json({ success: 'get "/"' });
-});
+app.use('/', router);
 
 app.listen(process.env.BACKEND_PORT_INTERNAL, () => {
     console.log(`Server is listening on port ${process.env.BACKEND_PORT_INTERNAL}`);
