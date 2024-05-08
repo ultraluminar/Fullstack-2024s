@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "node ./db/migrate.js",
-    "start": "node ./server.js"
+    "start": "node ./src/server.js"
   },
   "repository": {
     "type": "git",
