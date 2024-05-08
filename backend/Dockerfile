@@ -8,4 +8,4 @@ COPY . .
 
 RUN npx tsc
 
-CMD exec npm start
+ENTRYPOINT ["npm", "start"]
