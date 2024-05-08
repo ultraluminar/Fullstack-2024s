@@ -8,4 +8,4 @@ COPY . .
 
 RUN npx tsc
 
-CMD npm start
+CMD exec npm start
