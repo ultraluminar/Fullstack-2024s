@@ -10,5 +10,5 @@ export const stocks = pgTable(
     }
 );
 
-export type Stock = typeof stocks.$inferSelect;
-export type NewStock = typeof stocks.$inferInsert;
+export type StockType = typeof stocks.$inferSelect;
+export type NewStockType = typeof stocks.$inferInsert;

@@ -11,5 +11,5 @@ export const accounts = pgTable(
     }
 );
 
-export type Account = typeof accounts.$inferSelect;
-export type NewAccount = typeof accounts.$inferInsert;
+export type AccountType = typeof accounts.$inferSelect;
+export type NewAccountType = typeof accounts.$inferInsert;
