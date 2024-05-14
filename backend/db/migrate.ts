@@ -1,10 +1,5 @@
 import { migrate } from "drizzle-orm/node-postgres/migrator";
-import { drizzle } from "drizzle-orm/node-postgres";
-
-import * as schema from "./schema.js";
-import { pool } from "./db.js";
-
-export const db = drizzle(pool, { schema });
+import { db } from "./db.js";
 
 try {
     await migrate(db, { migrationsFolder: "./db/migrations/" });
