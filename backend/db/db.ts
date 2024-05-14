@@ -1,7 +1,7 @@
 import pg from "pg";
 const { Pool } = pg;
 
-import { drizzle } from "drizzle-orm/node-postgres";
+import { drizzle, NodePgDatabase } from "drizzle-orm/node-postgres";
 
 import { accounts } from "./schema/account.js";
 import { stocks } from "./schema/stock.js";
@@ -13,8 +13,9 @@ export const pool = new Pool({
     user: process.env.POSTGRES_USER!,
     password: process.env.POSTGRES_PASSWORD!,
     database: process.env.POSTGRES_DB!,
-
+    
     idleTimeoutMillis: 1000,
 });
 
-export const db = drizzle(pool, { schema: { accounts, stocks, orders } });
+const schema = { accounts, stocks, orders };
+export const db: NodePgDatabase<typeof schema> = drizzle(pool, { schema });
