@@ -9,13 +9,21 @@ services:
       interval: ${DB_HEALTH_CHECK_INTERVAL}
       timeout: ${DB_HEALTH_CHECK_TIMEOUT}
   
-  backend:
+  # backend:
+  #   build: 
+  #     context: backend/
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     database:
+  #       condition: service_healthy
+  #   ports:
+  #     - ${BACKEND_PORT}:${BACKEND_PORT_INTERNAL}
+
+  frontend:
     build: 
-      context: backend/
+      context: frontend/
     env_file:
       - .env
-    depends_on:
-      database:
-        condition: service_healthy
     ports:
-      - ${BACKEND_PORT}:${BACKEND_PORT_INTERNAL}
+      - ${FRONTEND_PORT}:${FRONTEND_PORT_INTERNAL}

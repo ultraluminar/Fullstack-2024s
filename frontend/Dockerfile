@@ -1,4 +1,4 @@
-FROM node:22.3-bookworm-slim
+from node:22.3-bookworm-slim
 
 WORKDIR /app
 
@@ -6,6 +6,6 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 
-RUN npx tsc
+RUN npm run build
 
 ENTRYPOINT ["npm", "start"]
