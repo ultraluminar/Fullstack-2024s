@@ -3,6 +3,7 @@
         "ms-azuretools.vscode-docker",
         "dbaeumer.vscode-eslint",
         "postman.postman-for-vscode",
-        "dotenv.dotenv-vscode"
+        "dotenv.dotenv-vscode",
+        "angular.ng-template"
     ]
 }
