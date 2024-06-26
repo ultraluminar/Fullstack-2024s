@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "prestart": "node ./db/migrate.js",
-    "start": "node ./src/server.js"
+    "start": "node ./src/server.js",
+    "predev": "npx tsc",
+    "dev": "node src/lib/api.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,8 @@
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "pg": "^8.11.5",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "yahoo-finance2": "^2.11.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
